@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DemoTest {
     private WebDriver driver;
-    private String BASE_URL = "http://localhost";
+    private final String BASE_URL = "http://localhost";
 
     @Before
     public void setUp(){

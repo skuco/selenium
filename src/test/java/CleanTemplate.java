@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class CountTest {
+public class CleanTemplate {
     private WebDriver driver;
     private final String BASE_URL = "http://localhost/clickmebaby.php";
 

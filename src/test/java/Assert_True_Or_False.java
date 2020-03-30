@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class booleanTest {
+public class Assert_True_Or_False {
     private WebDriver driver;
     private final String BASE_URL = "http://localhost/vybersi.php";
 

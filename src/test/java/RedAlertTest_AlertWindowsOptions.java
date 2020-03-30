@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class RedAlertTest {
+public class RedAlertTest_AlertWindowsOptions {
     private WebDriver driver;
     private final String BASE_URL = "http://localhost/redalert.php";
 

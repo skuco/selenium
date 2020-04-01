@@ -38,7 +38,7 @@ public class WaitForElementTest {
         new WebDriverWait(driver, 5)
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(By.xpath("//div//img[@class='brano']")));
-        driver.findElement(By.xpath("//div//img[@class='brano']"));
+        driver.findElement(By.xpath("//div//img[@class='brano']")).isDisplayed();
     }
 
 

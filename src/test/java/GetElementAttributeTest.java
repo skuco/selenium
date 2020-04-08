@@ -26,30 +26,27 @@ public class GetElementAttributeTest {
     }
 
     @Test
-    public void test() {
+    public void checkAllActiveSubPages() {
 
         // Basic test scenario for one bread scrum page
         driver.findElement(By.xpath("//li[a/@href=\"tabulka.php\"]")).click();
         System.out.println(driver.findElement(By.xpath("//li[a/@href=\"tabulka.php\"]")).getAttribute("class"));
         Assert.assertTrue(driver.findElement(By.xpath("//li[a/@href=\"tabulka.php\"]"))
                 .getAttribute("class").contains("active"));
-
-
-        // Iteration for all pages, optimized according to DRY principle
-        String expectedClass = "active";
-        List<String> pages = Arrays.asList("clickmebaby.php", "vybersi.php", "tabulka.php", "redalert.php");
-
-        for (String page : pages) {
-            driver.get(BASE_URL + "/" + page);
-            Assert.assertTrue(driver.findElement(By.xpath("//li[a/@href='" + page + "']"))
-                    .getAttribute("class").contains(expectedClass));
-            System.out.println("Checked page: " + page);
-        }
-
-
-
     }
 
+    @Test
+    public void checkAllActiveSubPagesDRY() {
 
+            // Iteration for all pages, optimized according to DRY principle
+            String expectedClass = "active";
+            List<String> pages = Arrays.asList("clickmebaby.php", "vybersi.php", "tabulka.php", "redalert.php");
 
+            for (String page : pages) {
+                driver.get(BASE_URL + "/" + page);
+                Assert.assertTrue(driver.findElement(By.xpath("//li[a/@href='" + page + "']"))
+                        .getAttribute("class").contains(expectedClass));
+                System.out.println("Checked page: " + page);
+            }
+    }
 }

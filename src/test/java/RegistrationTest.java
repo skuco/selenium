@@ -13,23 +13,30 @@ public class RegistrationTest {
     public void setUp(){
         System.setProperty("webdriver.gecko.driver","src/test/resources/drivers/geckodriver.exe");
         driver = new FirefoxDriver();
+        driver.get(BASE_URL);
     }
 
     @Test
     public void test(){
-        driver.get(BASE_URL);
-        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("jozkorozko@gmail.com");
-        driver.findElement(By.xpath("//input[@name='name']")).sendKeys("Jozko");
-        driver.findElement(By.xpath("//input[@name='surname']")).sendKeys("Rozko");
-        driver.findElement(By.xpath("//input[@name='password']")).sendKeys("P@ssword123");
-        driver.findElement(By.xpath("//input[@name='password-repeat']")).sendKeys("P@ssword123");
+        registrationFill("jozkorozko@gmail.com","Jozko","Rozko","P@ssword123","P@ssword123");
         driver.findElement(By.xpath("//input[@id='checkbox']")).click();
         driver.findElement(By.xpath("//button[@class='btn btn-success btn-lg btn-block']")).click();
     }
 
     @After
     public void tearDown(){
-
+        driver.quit();
     }
 
+
+    private void registrationFill(String email, String name, String surname, String password, String passwordAgain) {
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@name='name']")).sendKeys(name);
+        driver.findElement(By.xpath("//input[@name='surname']")).sendKeys(surname);
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@name='password-repeat']")).sendKeys(passwordAgain);
+    }
 }
+
+
+

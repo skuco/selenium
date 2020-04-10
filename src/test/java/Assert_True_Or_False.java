@@ -23,14 +23,14 @@ public class Assert_True_Or_False {
         new Select(driver.findElement(By.className("form-control"))).selectByIndex(4);
         System.out.println(driver.findElement(By.xpath("//h3[text()='I choose you Pikachu !']")).getText());
         Assert.assertTrue("Pikachu not found!" , driver.findElement(By.xpath("//h3[text()='I choose you Pikachu !']"))
-                .getText().contains("PikachuXXX"));
+                .getText().contains("Pikachu"));
         Assert.assertFalse(driver.findElement(By.xpath("//h3[text()='I choose you Pikachu !']"))
                 .getText().contains("HUHU"));
     }
 
     @After
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 
 }

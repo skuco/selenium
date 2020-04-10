@@ -32,6 +32,7 @@ public class SearchListTest_ListWebElement {
 
     @After
     public void tearDown(){
+        driver.quit();
     }
 
 }
